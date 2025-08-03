@@ -1,0 +1,156 @@
+
+/* PC・タブレット用の位置指定 */
+.pos-1 { 
+    top: 50px;     
+    left: 0px;  
+    width: 727px; 
+    height: 970px;
+}
+.pos-2 { 
+    top: 602px;    
+    left: calc(50% + 150px); /* 中央から右に150px */
+}
+.pos-3 { 
+    top: 783px;    
+    right: 0px;
+    width: 610px;
+    height: 373px; 
+}
+.pos-4 { 
+    top: 1336px;  
+    left: 50%;           /* 左端から50%の位置 */
+    transform: translateX(-50%);  /* 要素の幅の半分だけ左にずらして中央配置 */
+    width: 689px;
+    height: 517px;
+}
+
+/* pos-4のホバー時は中央配置を維持しながらスケール */
+.pos-4:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+.pos-5 { 
+    top: 2000px; 
+    left: 0px;
+    width: 608px;
+    height: 423px;
+}
+.pos-6 { 
+    top: 2329px;
+    left: calc(50% + 150px); /* 中央から右に200px */
+}
+.pos-7 { 
+    top: 2570px; 
+    right: 50px;
+    width: 855px;
+    height: 538px;
+}
+
+.photo-gallery {
+    min-height: 3100px;
+}
+
+/* iPad・タブレット用（1324px以下） */
+@media (max-width: 1324px) {
+    .pos-1 { 
+        top: 40px;     
+        left: 0px;  
+        width: 60vw; 
+        height: 75vw;
+    }
+    .pos-2 { 
+        top: 50vw;    
+        left: calc(50% + 10vw);
+        font-size: 20px;
+    }
+    .pos-3 { 
+        top: 65vw;    
+        right: 0px;
+        width: 50vw;
+        height: 30vw; 
+    }
+    .pos-4 { 
+        top: 110vw;  
+        left: 50%;
+        transform: translateX(-50%);
+        width: 55vw;
+        height: 42vw;
+    }
+    .pos-5 { 
+        top: 165vw; 
+        left: 0px;
+        width: 50vw;
+        height: 35vw;
+    }
+    .pos-6 { 
+        top: 190vw;
+        left: calc(50% + 8vw);
+        font-size: 20px;
+    }
+    .pos-7 { 
+        top: 210vw; 
+        right: 0px;
+        width: 70vw;
+        height: 44vw;
+    }
+    .photo-gallery {
+        min-height: 270vw;
+    }
+
+    .flip-card-back-content p {
+        font-size: 18px;
+    }
+
+    .pos-2, .pos-6 {
+        font-size: 18px;
+    }
+}
+
+/* スマホ用（768px以下） */
+/* スマホ用（768px以下） */
+@media (max-width: 768px) {
+    .photo-gallery {
+        position: static; /* 絶対配置を無効化 */
+        min-height: auto;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* pos順に縦並び、画面幅に合わせてサイズ調整 */
+    .pos-1, .pos-3, .pos-4, .pos-5, .pos-7 { 
+        position: static;
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        aspect-ratio: 4/3; /* 写真の縦横比を保持 */
+        margin: 0 auto;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+    }
+    
+    .pos-2, .pos-6 { 
+        position: static;
+        top: auto;
+        left: auto;
+        right: auto;
+        margin: 10px auto;
+        text-align: center;
+        max-width: 420px;
+        font-size: 16px; /* スマホ用に文字サイズ調整 */
+    }
+    
+    /* フリップカードの画像サイズ調整 */
+    .flip-card-front img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* フリップカード裏面の文字サイズ調整 */
+    .flip-card-back-content p {
+        font-size: 16px;
+    }
+}
