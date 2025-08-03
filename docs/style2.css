@@ -151,6 +151,78 @@
     color: #000000;
 }
 
+/* インフォメーションセクションのスタイル */
+.information {
+    margin: 40px 20px 60px 20px;
+    padding: 0;
+}
+
+.info-container {
+    display: flex;
+    border: 2px solid #738691;
+    background-color: #ffffff;
+    min-height: 250px;
+    padding: 20px;
+}
+
+.info-left {
+    flex: 1;
+    padding: 20px;
+}
+
+.info-right {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-item {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item p {
+    font-size: 16px;
+    margin: 0;
+    color: #000000;
+    line-height: 1.2; /* 行間を狭める */
+}
+
+.info-item a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.map-container {
+    width: 100%;
+    text-align: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    border: 1px solid #ccc;
+}
+
+.map-label {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 10px;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .country {
         position: relative; /* スマホでは通常の配置に戻す */
@@ -195,5 +267,33 @@
     .flip-card-back-content p {
         font-size: 16px;
         line-height: 1.5;
+    }
+    
+    /* インフォメーションのスマホ対応 */
+    .info-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .info-left {
+        padding: 15px;
+        display: flex;
+        justify-content: center; /* 左右中央寄せ */
+    }
+    
+    .info-right {
+        padding: 15px;
+    }
+    
+    .info-item h3 {
+        font-size: 16px;
+    }
+    
+    .info-item p {
+        font-size: 14px;
+    }
+    
+    .map-container iframe {
+        height: 150px;
     }
 }
