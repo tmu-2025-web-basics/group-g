@@ -1,0 +1,323 @@
+/* フォトギャラリーのスタイル */
+.photo-gallery {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    background: white;
+}
+
+/* 写真コンポーネント - クリックできない写真 */
+.gallery-photo {
+    position: absolute;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 文章コンポーネント */
+.gallery-text {
+    position: absolute;
+    background: none;
+    padding: 15px;
+    line-height: 1.6;
+    font-size: 24px;
+    max-width: 550px; /* 横幅を500pxに制限 */
+}
+
+/* フリップカード - クリックでひっくり返る写真 */
+.flip-card {
+    position: absolute;
+    perspective: 3000px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* ホバー効果用のトランジション */
+}
+
+.flip-card:hover {
+    transform: scale(1.05); /* ホバー時に5%拡大 */
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transform-origin: center;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(-180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    background-color: #fff;
+}
+
+.flip-card-back {
+    background-color: rgba(255, 255, 255, 0.9); /* 透明度90%の白背景 */
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* paddingを削除 */
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(
+        0 0,       /* 左上 */
+        100% 0,    /* 右上 */
+        100% calc(100% - 55px), /* 右下のカット開始点 */
+        calc(100% - 55px) 100%, /* カット終点 */
+        0 100%     /* 左下 */
+    );
+}
+
+.flip-card-inner::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotate(0deg);
+    width: 55px;
+    height: 55px;
+    background: #e8e8e8;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.08);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    z-index: 2;
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.flip-card-back-content {
+    text-align: center;
+    line-height: 1.6;
+    color: #000000;
+    max-width: 550px; /* 横幅を500pxに制限 */
+    margin: 0 auto; /* 左右中央寄せ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 上下中央寄せ */
+    align-items: center; /* 左右中央寄せ */
+    height: 100%; /* 親要素の高さに合わせる */
+    padding: 15px; /* 内側の余白を追加 */
+    box-sizing: border-box; /* paddingを含めてサイズ計算 */
+}
+
+.flip-card-back-content p {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* タイトルと国名のスタイル */
+.title {
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+
+.title p:first-child {
+    font-size: 48px;
+    margin: 0;
+    color: #000000;
+}
+
+.title p:last-child {
+    font-size: 32px;
+    margin: 0;
+    color: #000000;
+}
+
+.country {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    /* photo-galleryの上に重ねて配置 */
+    position: absolute;
+    top: 100px;          /* photo-galleryの上部にかぶるように配置 */
+    right: 50px;         /* 右端から50px */
+    z-index: 10;         /* photo-galleryより前面に表示 */
+    padding: 20px;
+}
+
+.country .flag {
+    width: 322px;
+    height: auto;
+}
+
+.country .flag img {
+    width: 100%;
+    height: 100%;
+}
+
+.country p {
+    font-size: 18px;
+    margin: 0;
+    color: #000000;
+}
+
+/* インフォメーションセクションのスタイル */
+.information {
+    margin: 40px 20px 60px 20px;
+    padding: 0;
+}
+
+.info-container {
+    display: flex;
+    border: 2px solid #738691;
+    background-color: #ffffff;
+    min-height: 250px;
+    padding: 20px;
+}
+
+.info-left {
+    flex: 1;
+    padding: 20px;
+}
+
+.info-right {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-item {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item p {
+    font-size: 16px;
+    margin: 0;
+    color: #000000;
+    line-height: 1.2; /* 行間を狭める */
+}
+
+.info-item a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.map-container {
+    width: 100%;
+    text-align: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    border: 1px solid #ccc;
+}
+
+.map-label {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .country {
+        position: relative; /* スマホでは通常の配置に戻す */
+        top: auto;
+        right: auto;
+        margin: 10px 0;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .title p:first-child {
+        font-size: 24px;
+    }
+    
+    .title p:last-child {
+        font-size: 16px;
+    }
+    
+    .country .flag {
+        width: 120px;
+        height: auto;
+    }
+    
+    .country p {
+        font-size: 16px;
+    }
+    
+    /* ギャラリーテキストのスマホ対応 */
+    .gallery-text {
+        font-size: 16px;
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    /* フリップカード裏面のスマホ対応 */
+    .flip-card-back-content {
+        max-width: 90%;
+        padding: 15px;
+    }
+    
+    .flip-card-back-content p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    /* インフォメーションのスマホ対応 */
+    .info-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .info-left {
+        padding: 15px;
+        display: flex;
+        justify-content: center; /* 左右中央寄せ */
+    }
+    
+    .info-right {
+        padding: 15px;
+    }
+    
+    .info-item h3 {
+        font-size: 16px;
+    }
+    
+    .info-item p {
+        font-size: 14px;
+    }
+    
+    .map-container iframe {
+        height: 150px;
+    }
+}

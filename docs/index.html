@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>tokyopassport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="Tokyo Passport Logo" id="logo">
+        </a>
+        <div class="hamburger" id="hamburger">  <!-- ハンバーガーアイコン --> 
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div class="menu-overlay" id="menu-overlay"> <!-- メニューオーバーレイ -->
+            <div class="hamburger close-icon" id="close-menu">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="search-section">
+                <p>🔍ジャンルごとに探す</p>
+            </div>
+            <nav class="menu-nav">
+                <div class="menu-section">
+                    <h3>食べる</h3>
+                    <ul>
+                        <li><a href="mexico/index.html">メキシコ / FONDA DE LA MADRUGADA</a></li>
+                        <li><a href="uzbekistan/index.html">ウズベキスタン / SAMALKAND TERRACE</a></li>
+                    </ul>
+                </div>
+                <div class="menu-section">
+                    <h3>体験する</h3>
+                    <ul>
+                        <li><a href="italy/index.html">イタリア / ラ・ヴィータ</a></li>
+                        <li><a href="korea/index.html">韓国 / 駐日韓国文化院</a></li>
+                    </ul>
+                </div>
+                <div class="menu-section">
+                    <h3>鑑賞する</h3>
+                    <ul>
+                        <li><a href="turkiye/index.html">トルコ / 東京ジャーミイ</a></li>
+                        <li><a href="france/index.html">フランス / 迎賓館赤坂離宮</a></li>
+                    </ul>
+                </div>
+                <div class="menu-section">
+                    <h3>買う</h3>
+                    <ul>
+                        <li><a href="africa/index.html">アフリカ / BOGOLAN Market</a></li>
+                    </ul>
+                </div>
+            </nav>
+    </div>
+
+    <main>
+        <div class="catchcopy">
+            <h3>パスポート不要の世界旅行、始めてみませんか？</h3>
+            <p>「東京パスポート」は、なかなか海外旅行に行けない私たち学生が、<br>
+                ”東京で異国の雰囲気を味わいたい”という思いから作ったサイトです。<br>
+                各国の本格料理が楽しめるレストランや、異文化を感じられる場所を紹介しています。<br>
+                </p>
+        </div>
+        <div class="map">
+            <img src="images/eee.png" alt="World Map">
+        </div>
+        <div class="photolist">
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- 最後の2つを先頭に複製（無限ループ用） -->
+                    <div class="photo-item">
+                        <a href="france/index.html">
+                            <img src="france/images/akasakarikyu.jpg" alt="France">
+                            <img src="france/images/france.jpg" alt="France Flag" class="flag">
+                        </a>
+                    </div>
+                    <div class="photo-item">
+                        <a href="africa/index.html">
+                            <img src="africa/images/bogolan.jpg" alt="Africa">
+                            <img src="africa/images/africa.png" alt="Africa Flag" class="flag">
+                        </a>
+                    </div>
+                    
+                    <!-- 元の要素 -->
+                    <div class="photo-item">
+                        <a href="turkiye/index.html">
+                            <img src="turkiye/images/mosque.jpg" alt="Turkey">
+                            <img src="turkiye/images/turkey.jpg" alt="Turkey Flag" class="flag">
+                        </a>
+                    </div>
+                    <div class="photo-item">
+                        <a href="mexico/index.html">
+                            <img src="mexico/images/mx_restaurant.jpg" alt="Mexico">
+                            <img src="mexico/images/mexico.jpg" alt="Mexico Flag" class="flag">
+                        </a>
+                    </div>
+                    <div class="photo-item">
+                        <a href="uzbekistan/index.html">
+                            <img src="uzbekistan/images/samarkand.jpg" alt="Uzbekistan">
+                            <img src="uzbekistan/images/uzb.jpg" alt="Uzbekistan Flag" class="flag">
+                        </a>
+                    </div>
+                    <div class="photo-item">
+                        <a href="italy/index.html">
+                            <img src="italy/images/bridge.jpg" alt="Italy">
+                            <img src="italy/images/italy.jpg" alt="Italy Flag" class="flag">
+                        </a>
+                    </div>
+                    <div class="photo-item">
+                        <a href="korea/index.html">
+                            <img src="korea/images/korea_center.jpg" alt="Korea">
+                            <img src="korea/images/korea.jpg" alt="Korea Flag" class="flag">
+                        </a>
+                    </div>
+                    <div class="photo-item">
+                        <a href="france/index.html">
+                            <img src="france/images/akasakarikyu.jpg" alt="France">
+                            <img src="france/images/france.jpg" alt="France Flag" class="flag">
+                        </a>
+                    </div>
+                    <div class="photo-item">
+                        <a href="africa/index.html">
+                            <img src="africa/images/bogolan.jpg" alt="Africa">
+                            <img src="africa/images/africa.png" alt="Africa Flag" class="flag">
+                        </a>
+                    </div>
+                    
+                    <!-- 最初の2つを末尾に複製（無限ループ用） -->
+                    <div class="photo-item">
+                        <a href="turkiye/index.html">
+                            <img src="turkiye/images/mosque.jpg" alt="Turkey">
+                            <img src="turkiye/images/turkey.jpg" alt="Turkey Flag" class="flag">
+                        </a>
+                    </div>
+                    <div class="photo-item">
+                        <a href="mexico/index.html">
+                            <img src="mexico/images/mx_restaurant.jpg" alt="Mexico">
+                            <img src="mexico/images/mexico.jpg" alt="Mexico Flag" class="flag">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <nav class="footer-nav">
+            <div class="footer-section">
+                <h3>食べる</h3>
+                <ul>
+                    <li><a href="mexico/index.html">メキシコ / FONDA DE LA MADRUGADA</a></li>
+                    <li><a href="uzbekistan/index.html">ウズベキスタン / SAMALKAND TERRACE</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>体験する</h3>
+                <ul>
+                    <li><a href="italy/index.html">イタリア / ラ・ヴィータ</a></li>
+                    <li><a href="korea/index.html">韓国 / 駐日韓国文化院</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>鑑賞する</h3>
+                <ul>
+                    <li><a href="turkiye/index.html">トルコ / 東京ジャーミイ</a></li>
+                    <li><a href="france/index.html">フランス / 迎賓館赤坂離宮</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>買う</h3>
+                <ul>
+                    <li><a href="africa/index.html">アフリカ / BOGOLAN Market</a></li>
+                </ul>
+            </div>
+        </nav>
+        <button class="back-to-top" id="back-to-top">
+            <div class="arrow-up"></div>
+        </button>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
